@@ -11,5 +11,8 @@
         "psr-4":{
             "ToFarias\\Framework\\":"src"
         }
+    },
+    "scripts":{
+        "server": "php -S localhost:8000 -t public"
     }
 }
