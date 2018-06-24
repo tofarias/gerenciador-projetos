@@ -9,10 +9,14 @@
     "require": {},
     "autoload": {
         "psr-4":{
-            "ToFarias\\Framework\\":"src"
+            "ToFarias\\Framework\\":"src",
+            "App\\":"app"
         }
     },
     "scripts":{
         "server": "php -S localhost:8000 -t public"
+    },
+    "config":{
+        "process-timeout": 0
     }
 }
