@@ -4,11 +4,11 @@ require __DIR__."/vendor/autoload.php";
 
 $router = new \ToFarias\Framework\Router();
 
-$router->add('/', function(){
+$router->add('GET','/', function(){
     return 'Home';
 });
 
-$router->add('/projects/(\d+)', function($params){
+$router->add('GET','/projects/(\d+)', function($params){
     return 'Projects '.$params[1];
 });
 

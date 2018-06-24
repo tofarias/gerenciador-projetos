@@ -10,18 +10,23 @@ class Router
     {
     }
 
-    public function add(string $pattern, $callback)
+    public function add(string $method, string $pattern, $callback)
     {
+        $method = strtolower( trim($method) );
         $pattern = '/^'.str_replace('/', '\/',$pattern).'$/';
-        $this->routes[$pattern] = $callback;
+        $this->routes[$method][$pattern] = $callback;
     }
 
     public function run()
     {
-        //$url = $_SERVER['PATH_INFO'] ?? '/';
         $url =$this->getUrl();
+        $method = strtolower( $_SERVER['REQUEST_METHOD'] );
 
-        foreach ($this->routes as $route => $action)
+        if(empty($this->routes[$method])){
+            return 'Page Not Found';
+        }
+
+        foreach ($this->routes[$method] as $route => $action)
         {
             if( preg_match($route, $url, $params) ){
                 return $action($params);
