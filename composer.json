@@ -1,0 +1,15 @@
+{
+    "name": "tofarias/gerproj",
+    "authors": [
+        {
+            "name": "Tiago Farias",
+            "email": "tiago.farias.poa@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4":{
+            "ToFarias\\Framework\\":"src"
+        }
+    }
+}
